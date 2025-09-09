@@ -2,6 +2,8 @@
 
 `<IN MEMORY OF CODE BLUE>`
 
+Steam Workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=3565060770
+
 Port of:
 - Blues Slots: Double or Nothing
 - Blues Slots: Wheel of Luck
