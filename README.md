@@ -9,7 +9,7 @@ Port of:
 Features:
 - Persists Jackpot and Slot Machines on the map
 - Offers a variety of helix configuration options
-- You can easily add you language currently supported (English, German)
+- You can easily add you language currently supported (English, German, Spanish)
 
 Content needed:
 [Double or Nothing Content](https://steamcommunity.com/sharedfiles/filedetails/?id=1174019751)
