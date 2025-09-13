@@ -93,7 +93,7 @@ end
 function ENT:Spin()
 	if self:GetBonusSpins() < 1 then
 		if not self.spinner:GetCharacter():HasMoney(ix.config.Get("wheelOfLuckBet")) then
-			self.spinner:ChatPrint("You cannot afford to use this machine, you need at least £" .. ix.config.Get("wheelOfLuckBet") .. ".")
+			self.spinner:ChatPrint(L("wolNotEnoughMoney", self.spinner) .. " (" .. ix.config.Get("wheelOfLuckBet") .. "€)")
 			return //Dont do anything else.
 		else
 			self.spinner:GetCharacter():TakeMoney(ix.config.Get("wheelOfLuckBet"))
@@ -247,7 +247,6 @@ function ENT:Spin()
 					self:EndBonus()
 					self:SetSkin(4) //Turn off all lights!
 					for k ,v in pairs(player.GetAll()) do
-						v:ChatPrint("HOLY SMOKES! "..self.spinner:Nick().." JUST WON A CRAZY JACKPOT OF £"..tostring(self:GetJackpot()).." ON WHEEL OF LUCK!")
 						ix.util.NotifyLocalized("wolWonJackpotNoti", v, self.spinner:Nick(), self:GetJackpot())
 					end
 					self:TriggerJackpot()

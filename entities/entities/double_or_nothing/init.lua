@@ -64,7 +64,7 @@ function ENT:Initialize()
 	--State of the button (false = double, true = cashout)
 	self.userState = false
 
-	if self:GetJackpot() == nil then
+	if self:GetJackpot() == nil or self:GetJackpot() == 0 then
 		self:SetJackpot(math.random(ix.config.Get("doubleOrNothingMinJackpot"), ix.config.Get("doubleOrNothingMaxJackpot")))
 	end	
 end
@@ -395,11 +395,14 @@ end)
 
 
 timer.Create("bdon:cleanUpUsedMachines", 1, 0, function()
-	for k ,v in pairs(player.GetAll()) do
-		if v.bdonTimeSinceLastUse ~= nil and v.bdonLastUsedSlot ~= nil and CurTime() - v.bdonTimeSinceLastUse > 30 then
-			v.bdonLastUsedSlot:UnlinkUser()
-		end
-	end
+    for k, v in pairs(player.GetAll()) do
+        if v.bdonTimeSinceLastUse ~= nil and v.bdonLastUsedSlot ~= nil and CurTime() - v.bdonTimeSinceLastUse > 30 then
+            local slot = v.bdonLastUsedSlot
+            if IsValid(slot) and isfunction(slot.UnlinkUser) then
+                slot:UnlinkUser()
+            end
+        end
+    end
 end)
 
 hook.Add("PlayerInitialSpawn", "bdn:setupmachine", function(ply)

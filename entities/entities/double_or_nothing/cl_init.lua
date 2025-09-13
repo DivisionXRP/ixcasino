@@ -573,7 +573,7 @@ end)
 net.Receive("bdn:winninginfo", function()
 	local winAmount = net.ReadInt(32)
 
-	chat.AddText(Color(255,255,255), "[BLUE'S SLOTS] Congratulations, You just won ", Color(255,0,255), "$"..comma_value(winAmount))
+	chat.AddText(L("dobWonMoneyNoti", winAmount))
 end)
 
 net.Receive("bdn:beginjackpot", function()
@@ -588,7 +588,7 @@ net.Receive("bdn:jackpotinfo", function()
 	local ply = net.ReadEntity()
 	local amount = net.ReadInt(32)
 
-	chat.AddText(Color(255,255,255), "[BLUE'S SLOTS] ", Color(255,0,255), ply:Name(), Color(255,255,255), " just won ", Color(255,0,255), comma_value(amount) .. "€", Color(255,255,255), " on ", Color(0,255,0), "Double ", Color(255,255,255), "Or ", Color(255,0,0), "Nothing!")
+	chat.AddText(L("dobWonJackpotNoti", ply:Name(), comma_value(amount)))
 end)
 --Sound related stuff
 

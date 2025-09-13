@@ -16,5 +16,8 @@ LANGUAGE = {
     dobNotEnoughMoney = "Du kannst dir das Spielen nicht leisten",
     dobPerGame = "PRO SPIEL",
     wolWonMoneyNoti = "Du hast %s€ im Wheel of Luck gewonnen!",
-    wolWonJackpotNoti = "%s hat den Jackpot von %s€ im Wheel of Luck gewonnen!"
+    wolWonJackpotNoti = "%s hat den Jackpot von %s€ im Wheel of Luck gewonnen!",
+    wolNotEnoughMoney = "Du kannst dir das Spielen nicht leisten",
+    dobWonMoneyNoti = "Du hast %s€ im Double or Nothing gewonnen!",
+    dobWonJackpotNoti = "%s hat den Jackpot von %s€ im Double or Nothing gewonnen!",
 }
